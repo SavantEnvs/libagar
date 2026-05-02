@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 ubuntu:22.04 as builder
+FROM ubuntu:22.04 AS builder
 
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential libfreetype6-dev clang
@@ -20,7 +20,7 @@ RUN make install
 ENV LD_LIBRARY_PATH=/repo/core
 RUN clang++ /repo/mayhem/fuzz_ag_length_utf8.cpp -fsanitize=fuzzer,address -I /install/include/agar/agar/ -I /install/include/agar/ -o /fuzz
 
-FROM ubuntu:22.04 as package
+FROM ubuntu:22.04 AS package
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libpng-dev
 COPY --from=builder /install /install
