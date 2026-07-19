@@ -1,0 +1,10 @@
+project: savantenvs/libagar
+target: agar-disasm
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/agar-disasm/testsuite
+
+cmds:
+  - cmd: /mayhem/agar-disasm
+    libfuzzer: true

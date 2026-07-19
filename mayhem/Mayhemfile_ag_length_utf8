@@ -1,0 +1,10 @@
+project: savantenvs/libagar
+target: ag-length-utf8
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/ag-length-utf8/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_ag_length_utf8
+    libfuzzer: true
