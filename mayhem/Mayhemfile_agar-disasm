@@ -1,0 +1,9 @@
+project: savantenvs/libagar
+target: agar-disasm-buggy-mhh-run-39
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/agar-disasm-buggy-mhh-run-39/testsuite
+
+cmds:
+  - cmd: /mayhem/agar-disasm-buggy-mhh-run-39 @@
