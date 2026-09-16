@@ -1,0 +1,10 @@
+project: savantenvs/libagar
+target: agar-disasm-buggy-mhh-run-39
+
+# origin: https://app.mayhem.security/mayhemheroes/libagar/agar-disasm/39
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+
+cmds:
+  - cmd: /mayhem/agar-disasm-buggy-mhh-run-39 @@
